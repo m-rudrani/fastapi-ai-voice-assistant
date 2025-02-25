@@ -1,0 +1,52 @@
+2025-02-25 16:18:27,099 - INFO - Received user input: hello
+2025-02-25 16:18:27,099 - INFO - Detecting intent for text: hello
+2025-02-25 16:18:28,947 - INFO - Detected intent: smalltalk.greetings.hello, Response: Hey there!
+2025-02-25 16:18:28,998 - INFO - Saved interaction to DB: 5
+2025-02-25 16:18:37,723 - INFO - Received user input: what are you doing
+2025-02-25 16:18:37,723 - INFO - Detecting intent for text: what are you doing
+2025-02-25 16:18:39,122 - INFO - Detected intent: smalltalk.user.good, Response: Great! Glad to hear it.
+2025-02-25 16:18:39,146 - INFO - Saved interaction to DB: 6
+2025-02-25 16:18:53,383 - INFO - Received user input: what is today date
+2025-02-25 16:18:53,383 - INFO - Detecting intent for text: what is today date
+2025-02-25 16:18:54,903 - INFO - Detected intent: Default Fallback Intent, Response: Say that again?
+2025-02-25 16:18:54,929 - INFO - Saved interaction to DB: 7
+2025-02-25 16:19:06,138 - INFO - Received user input: you are annoying
+2025-02-25 16:19:06,139 - INFO - Detecting intent for text: you are annoying
+2025-02-25 16:19:07,590 - INFO - Detected intent: smalltalk.agent.annoying, Response: I didn't mean to. I'll do my best to stop that.
+2025-02-25 16:19:07,616 - INFO - Saved interaction to DB: 8
+2025-02-25 16:43:49,565 - INFO - Received user input: hello
+2025-02-25 16:43:49,567 - INFO - Detecting intent for text: hello
+2025-02-25 16:43:51,792 - INFO - Detected intent: smalltalk.greetings.hello, Response: Greetings!
+2025-02-25 16:43:51,793 - INFO - Generating speech for text: Greetings!
+2025-02-25 16:43:53,523 - INFO - Speech saved to: static/ea4ff954-8414-4210-95d6-b303d0d54907.mp3
+2025-02-25 16:43:53,574 - INFO - Saved interaction to DB: 9
+2025-02-25 16:44:05,582 - INFO - Received user input: hows your day
+2025-02-25 16:44:05,582 - INFO - Detecting intent for text: hows your day
+2025-02-25 16:44:07,746 - INFO - Detected intent: smalltalk.greetings.how_are_you, Response: Wonderful! Thanks for asking.
+2025-02-25 16:44:07,747 - INFO - Generating speech for text: Wonderful! Thanks for asking.
+2025-02-25 16:44:08,918 - INFO - Speech saved to: static/8d5b8eb2-8465-45ac-bb53-081268f6f41e.mp3
+2025-02-25 16:44:08,948 - INFO - Saved interaction to DB: 10
+2025-02-25 16:44:18,189 - INFO - Received user input: you are smart
+2025-02-25 16:44:18,189 - INFO - Detecting intent for text: you are smart
+2025-02-25 16:44:19,747 - INFO - Detected intent: smalltalk.agent.clever, Response: You're pretty smart yourself.
+2025-02-25 16:44:19,748 - INFO - Generating speech for text: You're pretty smart yourself.
+2025-02-25 16:44:20,842 - INFO - Speech saved to: static/2e0a3760-4dc2-4555-bc73-90071112aaef.mp3
+2025-02-25 16:44:20,865 - INFO - Saved interaction to DB: 11
+2025-02-25 16:44:32,814 - INFO - Received user input: you are annoying
+2025-02-25 16:44:32,814 - INFO - Detecting intent for text: you are annoying
+2025-02-25 16:44:35,554 - INFO - Detected intent: smalltalk.agent.annoying, Response: I'll do my best not to annoy you in the future.
+2025-02-25 16:44:35,555 - INFO - Generating speech for text: I'll do my best not to annoy you in the future.
+2025-02-25 16:44:36,619 - INFO - Speech saved to: static/8b536a1a-3ae8-44e5-af5d-480d58f13c13.mp3
+2025-02-25 16:44:36,639 - INFO - Saved interaction to DB: 12
+2025-02-25 16:44:43,703 - INFO - Received user input: when was you born
+2025-02-25 16:44:43,703 - INFO - Detecting intent for text: when was you born
+2025-02-25 16:44:45,348 - INFO - Detected intent: Default Fallback Intent, Response: Sorry, can you say that again?
+2025-02-25 16:44:45,348 - INFO - Generating speech for text: Sorry, can you say that again?
+2025-02-25 16:44:46,334 - INFO - Speech saved to: static/439cb981-bfb1-4ff6-82b6-ff4f8baacd90.mp3
+2025-02-25 16:44:46,356 - INFO - Saved interaction to DB: 13
+2025-02-25 16:44:58,889 - INFO - Received user input: your date of birth
+2025-02-25 16:44:58,890 - INFO - Detecting intent for text: your date of birth
+2025-02-25 16:45:00,401 - INFO - Detected intent: smalltalk.agent.birth_date, Response: I don't know my birth date. Most virtual agents are young, though, like me.
+2025-02-25 16:45:00,402 - INFO - Generating speech for text: I don't know my birth date. Most virtual agents are young, though, like me.
+2025-02-25 16:45:01,664 - INFO - Speech saved to: static/0defaf1d-b1c0-4865-a080-c473e2044a13.mp3
+2025-02-25 16:45:01,688 - INFO - Saved interaction to DB: 14
