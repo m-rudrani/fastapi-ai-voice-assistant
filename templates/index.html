@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 500px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .chat-box {
+            height: 250px;
+            overflow-y: auto;
+            background: #fafafa;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+        }
+        .chat-box p {
+            padding: 8px;
+            border-radius: 5px;
+            margin: 5px 0;
+            width: fit-content;
+            max-width: 80%;
+        }
+        .user-message {
+            color: black;
+            text-align:right;
+        }
+        .bot-message {
+            background: #eee;
+            color: black;
+            text-align: left;
+        }
+        .input-container {
+            display: flex;
+            gap: 10px;
+        }
+        input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            background: #007bff;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #063c76;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>AI Voice Assistant</h2>
+        <div class="chat-box" id="chatBox">
+            <p><strong>Bot:</strong> Hello! How can I assist you today?</p>
+        </div>
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendText()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        async function sendText() {
+            let inputField = document.getElementById("userInput");
+            let chatBox = document.getElementById("chatBox");
+            let userText = inputField.value.trim();
+    
+            if (!userText) return;
+    
+            // Display user message
+            chatBox.innerHTML += `<p class="user-message"><strong>You:</strong> ${userText}</p>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+            inputField.value = "";
+    
+            // Send request to FastAPI
+            let response = await fetch("/process", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ text: userText })
+            });
+    
+            let data = await response.json();
+    
+            // Display AI response
+            chatBox.innerHTML += `<p class="bot-message"><strong>Bot:</strong> ${data.response}</p>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+    
+            // Play the AI response as voice
+            if (data.audio_url) {
+                let audio = new Audio(data.audio_url);
+                audio.play();
+            }
+        }
+    
+        // Handle "Enter" key press for sending message
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                sendText();
+            }
+        }
+    </script>
+    
+</body>
+</html>
